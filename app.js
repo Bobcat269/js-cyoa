@@ -12,9 +12,13 @@ let spices = 40
 let gems = 50
 let arms = 0
 let status = 0
+let i = 0
 //1 = dead, 0 = alive
 
-
+//while loop for allowing replay (currently breaking loop)
+// while (i === 0)
+// {
+//     console.log(`i=${i}`)
 
 const prompt = require('prompt-sync')()
 const username = prompt('Greetings traveler!  I can see that you must be a merchant.  What is your name? ')
@@ -54,7 +58,7 @@ if(choice2.toLowerCase() === 'highway'){
     console.log('You don\'t run into guards in the woods, which is probably why you run into outlaws!\n')
     if(gold === 0){
         spices = spices-20
-        console.log('The bandits want gold and gems, which you don\'t have luckily.\n Your arms aren\'t worth carrying. They take what spices they can carry and let you go')
+        console.log('The bandits want gold and gems, which you don\'t have luckily.\n Your arms aren\'t worth carrying. They take what spices they can carry and let you go.')
         console.log(`[You have ${gold} gold, $${spices} in Spices, and $${gems} in gems and $${arms} in arms]\n`)
     } else {
         gold = 0
@@ -67,9 +71,9 @@ if(choice2.toLowerCase() === 'highway'){
     console.log('Perhaps because you had too much to drink the night before, you can\'t control your horse and you crash into a ditch\n ')
 }
 
-setTimeout(afterpause, 3500)
-function afterpause()
-{
+ setTimeout(afterpause, 3500)
+ function afterpause()
+ {
 if(status === 0){
     console.log('You make it to Traunton where the Merchant\'s Guild is willing to buy your wares.\n' )
     if(arms > 0){
@@ -93,3 +97,12 @@ else {
     console.log('[GAME OVER]')
 }
 }
+
+//couldn't get this loop working yet without breaking code
+// const choice3 = prompt('Enter [Y] to restart, enter any other key to end.')
+// if (choice3 === 'Y'){
+//     console.log('[Restarting]')
+// }else {
+//     i++
+// }
+// }
